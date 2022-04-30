@@ -3,6 +3,7 @@ package ru.vladlin.ram_reader.di.component
 import dagger.Subcomponent
 import ru.vladlin.ram_reader.di.module.FeedModule
 import ru.vladlin.ram_reader.di.scope.FeedScope
+import ru.vladlin.ram_reader.ui.fragmentList.FragmentList
 import ru.vladlin.ram_reader.ui.fragmentSettings.FragmentSettings
 
 @FeedScope
@@ -18,6 +19,7 @@ interface FeedComponent
         fun build(): FeedComponent
     }
 
+    fun inject(fragmentList: FragmentList)
     fun inject(fragmentSettings: FragmentSettings)
 
 }

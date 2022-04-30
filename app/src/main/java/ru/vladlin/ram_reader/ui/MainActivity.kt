@@ -77,13 +77,14 @@ class MainActivity : AppCompatActivity(), TabViewFactory {
                 val anim: LottieAnimationView = findViewById(R.id.animationView)
                 anim.setAnimation("tab${index}.json")
                 findViewById<TextView>(R.id.title).text = when (index) {
-                    0 -> resources.getString(R.string.fo)
-                    1 -> resources.getString(R.string.settings)
+                    0 -> resources.getString(R.string.list)
+                    1 -> resources.getString(R.string.fo)
+                    2 -> resources.getString(R.string.settings)
                     else -> resources.getString(R.string.fo)
                 }
                 setOnClickListener {
                     anim.playAnimation()
-                    modo.selectStack(index)
+                    //modo.selectStack(index)
                 }
             }
 }

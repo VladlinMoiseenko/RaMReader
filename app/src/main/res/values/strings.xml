@@ -2,7 +2,11 @@
     <string name="app_name">Rick and Morty</string>
 
     <string name="settings">Settings</string>
+    <string name="list">List</string>
     <string name="fo">fo</string>
+    <string name="read_more">Read more</string>
+    <string name="no_internet">No internet</string>
+
 
     <string name="preferences_display_header">Display</string>
     <string name="preferences_display_dark_mode">Dark mode</string>
