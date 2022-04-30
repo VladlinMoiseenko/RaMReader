@@ -63,9 +63,9 @@ abstract class CardModel : EpoxyModelWithHolder<CardModel.CardHolder>(), View.On
                 .fitCenter().centerCrop()
                 .into(imageView)
             if (isSaved!!) {
-                lottieFavorites.setAnimation("tab1.json")
+                lottieFavorites.setAnimation("lottie_favorites.json")
             } else {
-                lottieFavorites.setAnimation("tab0.json")
+                lottieFavorites.setAnimation("lottie_list.json")
             }
             lottieFavorites.setOnClickListener(this@CardModel)
             readMoreMaterialTextView.setOnClickListener(this@CardModel)

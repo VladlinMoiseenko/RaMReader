@@ -75,16 +75,21 @@ class MainActivity : AppCompatActivity(), TabViewFactory {
             .inflate(R.layout.layout_tab, parent, false)
             .apply {
                 val anim: LottieAnimationView = findViewById(R.id.animationView)
-                anim.setAnimation("tab${index}.json")
+                when (index) {
+                    0 -> anim.setAnimation("lottie_list.json")
+                    1 -> anim.setAnimation("lottie_favorites.json")
+                    2 -> anim.setAnimation("lottie_settings.json")
+                    else -> anim.setAnimation("lottie_list.json")
+                }
                 findViewById<TextView>(R.id.title).text = when (index) {
                     0 -> resources.getString(R.string.list)
-                    1 -> resources.getString(R.string.fo)
+                    1 -> resources.getString(R.string.favorites)
                     2 -> resources.getString(R.string.settings)
-                    else -> resources.getString(R.string.fo)
+                    else -> resources.getString(R.string.list)
                 }
                 setOnClickListener {
                     anim.playAnimation()
-                    //modo.selectStack(index)
+                    modo.selectStack(index)
                 }
             }
 }
