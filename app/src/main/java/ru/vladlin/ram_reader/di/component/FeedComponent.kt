@@ -14,6 +14,7 @@ interface FeedComponent
 
     @Subcomponent.Builder
     interface Builder {
+
         fun build(): FeedComponent
     }
 

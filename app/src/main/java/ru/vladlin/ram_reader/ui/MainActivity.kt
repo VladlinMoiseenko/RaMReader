@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 import com.airbnb.lottie.LottieAnimationView
 import com.github.terrakok.modo.android.ModoRender
 import com.github.terrakok.modo.android.init
@@ -14,16 +15,12 @@ import com.github.terrakok.modo.android.saveState
 import com.github.terrakok.modo.back
 import com.github.terrakok.modo.selectStack
 import ru.vladlin.ram_reader.App
+import ru.vladlin.ram_reader.App.Companion.themeHelper
 import ru.vladlin.ram_reader.R
 import ru.vladlin.ram_reader.di.module.ActivityModule
-import ru.vladlin.ram_reader.themeHelper.ThemeHelper
-import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), TabViewFactory {
     private val modo = App.modo
-
-    @Inject
-    lateinit var themeHelper: ThemeHelper
 
     private val modoRender by lazy {
         object : ModoRender(this@MainActivity, R.id.container) {
@@ -43,6 +40,8 @@ class MainActivity : AppCompatActivity(), TabViewFactory {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         activitySubComponent.inject(this)
+
+        AppCompatDelegate.setDefaultNightMode(themeHelper.getNightMode())
 
         setTheme(themeHelper.getAppTheme())
 
