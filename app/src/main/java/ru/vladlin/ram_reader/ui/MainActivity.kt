@@ -74,9 +74,13 @@ class MainActivity : AppCompatActivity(), TabViewFactory {
         LayoutInflater.from(this)
             .inflate(R.layout.layout_tab, parent, false)
             .apply {
-                val anim: LottieAnimationView = findViewById<LottieAnimationView>(R.id.animationView)
+                val anim: LottieAnimationView = findViewById(R.id.animationView)
                 anim.setAnimation("tab${index}.json")
-                findViewById<TextView>(R.id.title).text = "Tab ${index + 1}"
+                findViewById<TextView>(R.id.title).text = when (index) {
+                    0 -> resources.getString(R.string.fo)
+                    1 -> resources.getString(R.string.settings)
+                    else -> resources.getString(R.string.fo)
+                }
                 setOnClickListener {
                     anim.playAnimation()
                     modo.selectStack(index)

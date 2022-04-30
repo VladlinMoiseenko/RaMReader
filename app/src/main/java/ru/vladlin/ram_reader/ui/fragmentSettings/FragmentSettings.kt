@@ -14,10 +14,6 @@ class FragmentSettings : PreferenceFragmentCompat() {
     private var darkModePref: ListPreference? = null
     private var themePref: ListPreference? = null
 
-    val fragmentListComponent by lazy {
-        return@lazy (requireActivity() as MainActivity).feedComponent
-    }
-
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
     }
