@@ -6,7 +6,9 @@
     <string name="favorites">Favorites</string>
     <string name="read_more">Read more</string>
     <string name="no_internet">No internet</string>
-
+    <string name="save">Save</string>
+    <string name="remove_save">Remove</string>
+    <string name="repeat">Repeat</string>
 
     <string name="preferences_display_header">Display</string>
     <string name="preferences_display_dark_mode">Dark mode</string>

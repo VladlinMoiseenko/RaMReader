@@ -3,6 +3,8 @@ package ru.vladlin.ram_reader.ui
 import com.github.terrakok.modo.android.AppScreen
 import com.github.terrakok.modo.android.MultiAppScreen
 import kotlinx.parcelize.Parcelize
+import ru.vladlin.ram_reader.ui.fragmentDetail.FragmentDetail
+import ru.vladlin.ram_reader.ui.fragmentFavorites.FragmentFavorites
 import ru.vladlin.ram_reader.ui.fragmentList.FragmentList
 import ru.vladlin.ram_reader.ui.fragmentSettings.FragmentSettings
 
@@ -19,13 +21,18 @@ object Screens {
     }
 
     @Parcelize
-    class Fo : AppScreen("FragmentFo") {
-        override fun create() = FragmentFo()
+    class Favorites : AppScreen("FragmentFavorites") {
+        override fun create() = FragmentFavorites()
+    }
+
+    @Parcelize
+    class Detail(private val id_: Long) : AppScreen("FragmentDetail") {
+        override fun create() = FragmentDetail.create(id_)
     }
 
     fun MultiStack() = MultiAppScreen(
         "MultiStack",
-        listOf(List(), Fo(), Settings()),
+        listOf(List(), Favorites(), Settings()),
         0
     )
 

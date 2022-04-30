@@ -1,4 +1,4 @@
-package ru.vladlin.ram_reader.ui.fragmentList
+package ru.vladlin.ram_reader.ui.fragmentFavorites
 
 import android.content.Context
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.terrakok.modo.forward
 import com.google.android.material.snackbar.Snackbar
-import ru.vladlin.ram_reader.App
+import ru.vladlin.ram_reader.App.Companion.modo
 import ru.vladlin.ram_reader.databinding.FragmentListBinding
 import ru.vladlin.ram_reader.lifecycle.ViewModelFactory
 import ru.vladlin.ram_reader.lifecycle.injectViewModel
@@ -18,10 +18,9 @@ import ru.vladlin.ram_reader.ui.epoxy.CardModel
 import ru.vladlin.ram_reader.ui.epoxy.EpoxyController
 import javax.inject.Inject
 
-class FragmentList : Fragment(), CardModel.Listener {
-    private val modo = App.modo
+class FragmentFavorites : Fragment(), CardModel.Listener {
 
-    private lateinit var viewModel: ViewModelList
+    private lateinit var viewModel: ViewModelFavorites
     private lateinit var binding: FragmentListBinding
 
     @Inject
