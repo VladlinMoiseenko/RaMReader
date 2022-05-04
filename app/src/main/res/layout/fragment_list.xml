@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipe_refresh"
-    tools:context="ru.vladlin.ram_reader.ui.fragmentList.FragmentList">
+    tools:context="ru.vladlin.ram_reader.ui.fragmentPaging.FragmentPaging">
 
     <FrameLayout
         android:layout_width="match_parent"

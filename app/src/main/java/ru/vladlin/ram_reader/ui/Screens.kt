@@ -6,14 +6,14 @@ import kotlinx.parcelize.Parcelize
 import ru.vladlin.ram_reader.ui.fragmentCarousel.FragmentCarousel
 import ru.vladlin.ram_reader.ui.fragmentDetail.FragmentDetail
 import ru.vladlin.ram_reader.ui.fragmentFavorites.FragmentFavorites
-import ru.vladlin.ram_reader.ui.fragmentList.FragmentList
+import ru.vladlin.ram_reader.ui.fragmentPaging.FragmentPaging
 import ru.vladlin.ram_reader.ui.fragmentSettings.FragmentSettings
 
 object Screens {
 
     @Parcelize
-    class List : AppScreen("FragmentList") {
-        override fun create() = FragmentList()
+    class Paging : AppScreen("FragmentPaging") {
+        override fun create() = FragmentPaging()
     }
 
     @Parcelize
@@ -38,7 +38,7 @@ object Screens {
 
     fun MultiStack() = MultiAppScreen(
         "MultiStack",
-        listOf(Carousel(), List(), Favorites(), Settings()),
+        listOf(Carousel(), Paging(), Favorites(), Settings()),
         0
     )
 

@@ -6,7 +6,7 @@ import ru.vladlin.ram_reader.di.scope.FeedScope
 import ru.vladlin.ram_reader.ui.fragmentCarousel.FragmentCarousel
 import ru.vladlin.ram_reader.ui.fragmentDetail.FragmentDetail
 import ru.vladlin.ram_reader.ui.fragmentFavorites.FragmentFavorites
-import ru.vladlin.ram_reader.ui.fragmentList.FragmentList
+import ru.vladlin.ram_reader.ui.fragmentPaging.FragmentPaging
 import ru.vladlin.ram_reader.ui.fragmentSettings.FragmentSettings
 
 @FeedScope
@@ -22,7 +22,7 @@ interface FeedComponent
     }
 
     fun inject(fragmentCarousel: FragmentCarousel)
-    fun inject(fragmentList: FragmentList)
+    fun inject(fragmentPaging: FragmentPaging)
     fun inject(fragmentSettings: FragmentSettings)
     fun inject(fragmentFavorites: FragmentFavorites)
     fun inject(fragmentDetail: FragmentDetail)

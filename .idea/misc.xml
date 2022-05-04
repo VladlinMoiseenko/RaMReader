@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/drawable/ic_alive.xml" value="0.17222222222222222" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/drawable/ic_camera.xml" value="0.1037037037037037" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/drawable/ic_cloud_done.xml" value="0.1037037037037037" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/drawable/ic_cloud_download.xml" value="0.23703703703703705" />
+        <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/drawable/ic_genderless.xml" value="0.17222222222222222" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23055555555555557" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/drawable/list_placeholder_err_img.xml" value="0.16944444444444445" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/drawable/list_placeholder_img.xml" value="0.16944444444444445" />
@@ -16,9 +18,11 @@
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/component_large_overline.xml" value="0.11388888888888889" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/component_loader.xml" value="0.11388888888888889" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/component_overline.xml" value="0.2069402228976697" />
+        <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/fragment_characters_list.xml" value="0.2069402228976697" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/fragment_detail.xml" value="0.18703703703703703" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/fragment_fo.xml" value="0.10462962962962963" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/fragment_list.xml" value="0.11388888888888889" />
+        <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/item_character_list.xml" value="0.1" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/layout/item_image.xml" value="0.17685185185185184" />
         <entry key="..\:/a/a/_rm/RaMReader/app/src/main/res/xml/root_preferences.xml" value="0.17037037037037037" />
       </map>

@@ -10,7 +10,7 @@ import ru.vladlin.ram_reader.lifecycle.ViewModelFactory
 import ru.vladlin.ram_reader.ui.fragmentCarousel.ViewModelCarousel
 import ru.vladlin.ram_reader.ui.fragmentDetail.ViewModelDetail
 import ru.vladlin.ram_reader.ui.fragmentFavorites.ViewModelFavorites
-import ru.vladlin.ram_reader.ui.fragmentList.ViewModelList
+import ru.vladlin.ram_reader.ui.fragmentPaging.ViewModelPaging
 
 @Module
 abstract class ViewModelModule
@@ -20,8 +20,8 @@ abstract class ViewModelModule
 
     @Binds
     @IntoMap
-    @ViewModelKey(ViewModelList::class)
-    abstract fun viewModelList(viewModelList: ViewModelList): ViewModel
+    @ViewModelKey(ViewModelPaging::class)
+    abstract fun viewModelPaging(viewModelPaging: ViewModelPaging): ViewModel
 
     @Binds
     @IntoMap
