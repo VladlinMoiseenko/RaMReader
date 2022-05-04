@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(), TabViewFactory {
             .apply {
                 val anim: LottieAnimationView = findViewById(R.id.animationView)
                 when (index) {
-                    0 -> anim.setAnimation("lottie_list.json")
+                    0 -> anim.setAnimation("lottie_carousel.json")
                     1 -> anim.setAnimation("lottie_list.json")
                     2 -> anim.setAnimation("lottie_favorites.json")
                     3 -> anim.setAnimation("lottie_settings.json")
