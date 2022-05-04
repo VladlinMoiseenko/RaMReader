@@ -77,14 +77,16 @@ class MainActivity : AppCompatActivity(), TabViewFactory {
                 val anim: LottieAnimationView = findViewById(R.id.animationView)
                 when (index) {
                     0 -> anim.setAnimation("lottie_list.json")
-                    1 -> anim.setAnimation("lottie_favorites.json")
-                    2 -> anim.setAnimation("lottie_settings.json")
+                    1 -> anim.setAnimation("lottie_list.json")
+                    2 -> anim.setAnimation("lottie_favorites.json")
+                    3 -> anim.setAnimation("lottie_settings.json")
                     else -> anim.setAnimation("lottie_list.json")
                 }
                 findViewById<TextView>(R.id.title).text = when (index) {
-                    0 -> resources.getString(R.string.list)
-                    1 -> resources.getString(R.string.favorites)
-                    2 -> resources.getString(R.string.settings)
+                    0 -> resources.getString(R.string.carousel)
+                    1 -> resources.getString(R.string.list)
+                    2 -> resources.getString(R.string.favorites)
+                    3 -> resources.getString(R.string.settings)
                     else -> resources.getString(R.string.list)
                 }
                 setOnClickListener {

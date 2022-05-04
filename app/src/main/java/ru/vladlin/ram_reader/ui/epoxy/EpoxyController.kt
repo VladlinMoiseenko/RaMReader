@@ -20,12 +20,12 @@ class EpoxyController(val listenerFeed: CardModel.Listener)
         for (item in data) {
 
             largeOverline {
-                id(item.id+item.id)
+                id("large-over-line:$item.id}")
                 value(item.name)
             }
 
             card {
-                id(item.id)
+                id("card-id:$item.id}")
                 title(item.name)
                 subtitle(item.species)
                 imageUrl(item.image)

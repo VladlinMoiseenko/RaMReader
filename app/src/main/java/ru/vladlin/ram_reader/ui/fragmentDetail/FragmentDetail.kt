@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -66,14 +65,6 @@ class FragmentDetail : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentDetailBinding.inflate(inflater)
-
-/*        val toolbar = binding.root.findViewById<Toolbar>(R.id.toolbar)
-        appCompactActivity.setSupportActionBar(toolbar)
-        appCompactActivity.supportActionBar?.title = ""
-        appCompactActivity.supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_arrow_back)
-        appCompactActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setHasOptionsMenu(true)
-        toolbar.setTitle(resources.getString(R.string.character))*/
 
         binding.listImages.layoutManager = LinearLayoutManager(requireContext())
         binding.listImages.setController(listImageController)
@@ -171,7 +162,6 @@ class FragmentDetail : Fragment(), View.OnClickListener {
         when(item.itemId)
         {
             android.R.id.home -> {
-                //router.exit()
                 modo.exit()
             }
         }

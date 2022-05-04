@@ -72,7 +72,7 @@
                     android:padding="16dp"
                     android:textSize="14sp"
                     android:textStyle="normal"
-                    android:textColor="@color/color_background"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:drawableLeft="@drawable/ic_cloud_download"
                     android:drawablePadding="16dp"/>
 

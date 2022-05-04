@@ -32,7 +32,7 @@ object Screens {
 
     fun MultiStack() = MultiAppScreen(
         "MultiStack",
-        listOf(List(), Favorites(), Settings()),
+        listOf(List(), List(), Favorites(), Settings()),
         0
     )
 
