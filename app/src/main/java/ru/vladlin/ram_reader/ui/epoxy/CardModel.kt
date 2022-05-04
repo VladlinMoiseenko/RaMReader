@@ -1,15 +1,12 @@
 package ru.vladlin.ram_reader.ui.epoxy
 
-import android.animation.Animator
 import android.content.Context
 import android.content.res.Resources
-import android.util.Log
 import android.view.View
 import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
-import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 import ru.vladlin.ram_reader.R
 import ru.vladlin.ram_reader.databinding.ComponentCardBinding
@@ -64,8 +61,10 @@ abstract class CardModel : EpoxyModelWithHolder<CardModel.CardHolder>(), View.On
                 .into(imageView)
             if (isSaved!!) {
                 lottieFavorites.setAnimation("lottie_favorites.json")
+                lottieFavorites.playAnimation()
             } else {
                 lottieFavorites.setAnimation("lottie_list.json")
+                lottieFavorites.playAnimation()
             }
             lottieFavorites.setOnClickListener(this@CardModel)
             readMoreMaterialTextView.setOnClickListener(this@CardModel)
@@ -76,23 +75,7 @@ abstract class CardModel : EpoxyModelWithHolder<CardModel.CardHolder>(), View.On
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.lottie_favorites -> {
-                val lottieFavorites: LottieAnimationView = view.findViewById(R.id.lottie_favorites)
-                lottieFavorites.playAnimation()
-                lottieFavorites.addAnimatorListener(object : Animator.AnimatorListener {
-                    override fun onAnimationStart(animation: Animator) {
-                        Log.e("MVVV", "Animation:start")
-                    }
-                    override fun onAnimationEnd(animation: Animator) {
-                        Log.e("MVVV", "Animation:end")
-                        listener.savedClick(id_!!)
-                    }
-                    override fun onAnimationCancel(animation: Animator) {
-                        Log.e("MVVV", "Animation:Cancel")
-                    }
-                    override fun onAnimationRepeat(animation: Animator) {
-                        Log.e("MVVV", "Animation:repeat")
-                    }
-                })
+                listener.savedClick(id_!!)
             }
             R.id.readMoreMaterialTextView -> {
                 listener.readMoreClick(id_!!)

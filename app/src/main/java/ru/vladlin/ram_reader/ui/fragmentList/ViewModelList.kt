@@ -25,7 +25,7 @@ import ru.vladlin.ram_reader.domain.boundaries.CharacterNetworkInteractor
 import ru.vladlin.ram_reader.domain.model.CharacterList
 import ru.vladlin.ram_reader.domain.model.CharacterModel
 import ru.vladlin.ram_reader.lifecycle.SingleLiveEvent
-import ru.vladlin.ram_reader.lifecycle.BrokerLiveData
+import ru.vladlin.ram_reader.lifecycle.BrokerPairLiveData
 import javax.inject.Inject
 
 class ViewModelList @Inject constructor(
@@ -38,7 +38,7 @@ class ViewModelList @Inject constructor(
     private val feed: MutableLiveData<List<CharacterModel>> = MutableLiveData()
     private val idSavedCharacters: MutableLiveData<List<Long>> = MutableLiveData()
 
-    val dataFeed = BrokerLiveData.brokerLiveData(feed, idSavedCharacters)
+    val dataFeed = BrokerPairLiveData.brokerLiveData(feed, idSavedCharacters)
 
     var isRefreshed: MutableLiveData<Boolean> = MutableLiveData()
     val errorFeed: SingleLiveEvent<String?> = SingleLiveEvent()

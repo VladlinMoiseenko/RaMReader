@@ -6,14 +6,13 @@ import androidx.lifecycle.MediatorLiveData
 class BrokerLiveData
 {
     companion object {
-        fun <A, B> brokerLiveData(a: LiveData<A>, b: LiveData<B>): LiveData<Pair<A, B>> {
-            return MediatorLiveData<Pair<A, B>>().apply {
+        fun <A> brokerLiveData(a: LiveData<A>): LiveData<A> {
+            return MediatorLiveData<A>().apply {
                 var liveDataA: A? = null
-                var liveDataB: B? = null
 
                 fun update() {
-                    if (liveDataA != null && liveDataB != null)
-                        this.value = Pair(liveDataA!!, liveDataB!!)
+                    if (liveDataA != null)
+                        this.value = liveDataA!!
                 }
 
                 addSource(a) {
@@ -21,10 +20,6 @@ class BrokerLiveData
                     update()
                 }
 
-                addSource(b) {
-                    liveDataB = it
-                    update()
-                }
             }
         }
     }

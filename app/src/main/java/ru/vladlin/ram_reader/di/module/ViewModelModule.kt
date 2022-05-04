@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import ru.vladlin.ram_reader.di.key.ViewModelKey
 import ru.vladlin.ram_reader.lifecycle.ViewModelFactory
+import ru.vladlin.ram_reader.ui.fragmentCarousel.ViewModelCarousel
 import ru.vladlin.ram_reader.ui.fragmentDetail.ViewModelDetail
 import ru.vladlin.ram_reader.ui.fragmentFavorites.ViewModelFavorites
 import ru.vladlin.ram_reader.ui.fragmentList.ViewModelList
@@ -21,6 +22,11 @@ abstract class ViewModelModule
     @IntoMap
     @ViewModelKey(ViewModelList::class)
     abstract fun viewModelList(viewModelList: ViewModelList): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ViewModelCarousel::class)
+    abstract fun viewModelCarousel(viewModelCarousel: ViewModelCarousel): ViewModel
 
     @Binds
     @IntoMap
