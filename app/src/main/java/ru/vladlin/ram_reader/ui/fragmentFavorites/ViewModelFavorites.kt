@@ -19,9 +19,11 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.greenrobot.eventbus.EventBus
 import ru.vladlin.ram_reader.data.network.NetworkErrorInteractor
 import ru.vladlin.ram_reader.domain.boundaries.CharacterLocalInteractor
 import ru.vladlin.ram_reader.domain.model.CharacterModel
+import ru.vladlin.ram_reader.eventbus.UpdateList
 import ru.vladlin.ram_reader.lifecycle.SingleLiveEvent
 import ru.vladlin.ram_reader.lifecycle.BrokerPairLiveData
 import javax.inject.Inject
@@ -102,6 +104,7 @@ class ViewModelFavorites @Inject constructor(
                 .collect{
                     loadIdSavedCharacters()
                     loadData()
+                    EventBus.getDefault().post(UpdateList(1))
                 }
         }
     }

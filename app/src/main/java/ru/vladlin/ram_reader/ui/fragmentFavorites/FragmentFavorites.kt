@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.terrakok.modo.forward
 import com.google.android.material.snackbar.Snackbar
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 import ru.vladlin.ram_reader.App.Companion.modo
 import ru.vladlin.ram_reader.databinding.FragmentListBinding
+import ru.vladlin.ram_reader.eventbus.UpdateList
 import ru.vladlin.ram_reader.lifecycle.ViewModelFactory
 import ru.vladlin.ram_reader.lifecycle.injectViewModel
 import ru.vladlin.ram_reader.ui.MainActivity
@@ -79,5 +82,24 @@ class FragmentFavorites : Fragment(), CardModel.Listener {
 
     override fun readMoreClick(id: Long) {
         modo.forward(Screens.Detail(id))
+    }
+
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        EventBus.getDefault().unregister(this)
+        super.onStop()
+    }
+
+    @Subscribe
+    fun eventBusUpdatePost(event: UpdateList?) {
+        event?.targetMode.let {
+            if (it == 1) {
+                viewModel.loadData()
+            }
+        }
     }
 }

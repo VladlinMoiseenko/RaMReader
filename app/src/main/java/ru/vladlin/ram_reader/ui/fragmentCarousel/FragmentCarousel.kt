@@ -109,8 +109,9 @@ class FragmentCarousel : Fragment(), LargeCharacterModel.Listener, CardModel.Lis
     @Subscribe
     fun eventBusUpdatePost(event: UpdateList?) {
         event?.targetMode.let {
-            if (it == 1)
+            if (it == 1) {
                 viewModel.loadData()
+            }
         }
     }
 }
