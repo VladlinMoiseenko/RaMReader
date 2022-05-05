@@ -8,6 +8,7 @@ import ru.vladlin.ram_reader.ui.fragmentDetail.FragmentDetail
 import ru.vladlin.ram_reader.ui.fragmentFavorites.FragmentFavorites
 import ru.vladlin.ram_reader.ui.fragmentPaging.FragmentPaging
 import ru.vladlin.ram_reader.ui.fragmentSettings.FragmentSettings
+import ru.vladlin.ram_reader.ui.fragmentSplash.FragmentSplash
 
 @FeedScope
 @Subcomponent(modules = [
@@ -26,4 +27,5 @@ interface FeedComponent
     fun inject(fragmentSettings: FragmentSettings)
     fun inject(fragmentFavorites: FragmentFavorites)
     fun inject(fragmentDetail: FragmentDetail)
+    fun inject(fragmentSplash: FragmentSplash)
 }

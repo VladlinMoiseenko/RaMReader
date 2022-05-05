@@ -8,6 +8,7 @@ import ru.vladlin.ram_reader.ui.fragmentDetail.FragmentDetail
 import ru.vladlin.ram_reader.ui.fragmentFavorites.FragmentFavorites
 import ru.vladlin.ram_reader.ui.fragmentPaging.FragmentPaging
 import ru.vladlin.ram_reader.ui.fragmentSettings.FragmentSettings
+import ru.vladlin.ram_reader.ui.fragmentSplash.FragmentSplash
 
 object Screens {
 
@@ -34,6 +35,11 @@ object Screens {
     @Parcelize
     class Detail(private val id_: Long) : AppScreen("FragmentDetail") {
         override fun create() = FragmentDetail.create(id_)
+    }
+
+    @Parcelize
+    class Splash : AppScreen("FragmentSplash") {
+        override fun create() = FragmentSplash()
     }
 
     fun MultiStack() = MultiAppScreen(

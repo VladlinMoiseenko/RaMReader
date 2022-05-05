@@ -13,6 +13,8 @@ import com.github.terrakok.modo.android.init
 import com.github.terrakok.modo.android.multi.TabViewFactory
 import com.github.terrakok.modo.android.saveState
 import com.github.terrakok.modo.back
+import com.github.terrakok.modo.forward
+import com.github.terrakok.modo.newStack
 import com.github.terrakok.modo.selectStack
 import ru.vladlin.ram_reader.App
 import ru.vladlin.ram_reader.App.Companion.themeHelper
@@ -48,7 +50,9 @@ class MainActivity : AppCompatActivity(), TabViewFactory {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        modo.init(savedInstanceState, Screens.MultiStack())
+        //modo.init(savedInstanceState, Screens.MultiStack())
+        //modo.newStack(Screens.Splash())
+        modo.forward(Screens.Splash())
     }
 
     override fun onResume() {
